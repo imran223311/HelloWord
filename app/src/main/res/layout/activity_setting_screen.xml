@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".SettingScreen">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="146dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="47dp"
+            android:layout_height="53dp"
+            android:contentDescription="@string/todo"
+            app:srcCompat="@drawable/settings_icon_1964x2048_8nigtrtt__1_" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="181dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/applethin"
+            android:gravity="center"
+            android:text="@string/setting"
+            android:textColor="#393939"
+            android:textSize="40sp"
+            tools:ignore="TextSizeCheck" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="91dp"
+        android:orientation="vertical">
+
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="332dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:enabled="true"
+            android:gravity="center"
+            android:onClick="onSwitchClick"
+            android:saveEnabled="true"
+            android:text="@string/music_background"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            tools:ignore="TextSizeCheck,UseSwitchCompatOrMaterialXml" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -8,7 +8,7 @@
     tools:context=".MainScreen">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/Game_Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="58dp"
@@ -24,31 +24,35 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button_setting"
+        android:id="@+id/Button_Play"
         android:layout_width="225dp"
         android:layout_height="80dp"
         android:layout_marginStart="93dp"
         android:layout_marginTop="135dp"
         android:layout_marginEnd="93dp"
+        android:onClick="goGameScreen"
         android:text="@string/play"
         android:textSize="20sp"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/Game_Name"
+        tools:ignore="TextSizeCheck" />
 
     <Button
-        android:id="@+id/button_play"
+        android:id="@+id/Button_Setting"
         android:layout_width="200dp"
         android:layout_height="70dp"
         android:layout_marginStart="105dp"
         android:layout_marginTop="260dp"
         android:layout_marginEnd="105dp"
+        android:onClick="goSettingScreen"
         android:text="@string/setting"
         android:textSize="20sp"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/Game_Name"
+        tools:ignore="TextSizeCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
