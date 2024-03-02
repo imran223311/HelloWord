@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="#A6ACAF"
+    android:background="@drawable/bg"
+    tools:context=".GameScreen"
     >
 
     <LinearLayout
@@ -13,24 +14,52 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="543dp"
+            android:layout_height="560dp"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="77dp"
+                android:layout_height="91dp"
                 android:orientation="horizontal"
                 tools:ignore="UselessLeaf">
 
-                <TextView
-                    android:id="@+id/topp"
-                    android:layout_width="0dp"
+                <ImageButton
+                    android:id="@+id/back"
+                    android:layout_width="43dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/settingg"
+                    android:onClick="goMain"
+                    android:src="@drawable/back" />
+
+                <Space
+                    android:layout_width="252dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="36dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
                     android:gravity="center"
-                    android:text="@string/wordle"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
+                    android:onClick="giveups"
+                    android:text="@string/aaa"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
+
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/setingg"
+                    android:onClick="goSettingScreen"
+                    android:src="@drawable/settingicon"
+                    tools:ignore="TouchTargetSizeCheck" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -51,8 +80,9 @@
                     android:background="@drawable/viewletter"
                     android:gravity="center"
                     android:inputType="text"
-                    android:textSize="40sp"
                     android:text=""
+                    android:textColor="#000000"
+                    android:textSize="40sp"
                     android:textStyle="bold"
                     tools:ignore="TextViewEdits,SpeakableTextPresentCheck,TextSizeCheck" />
 
@@ -68,6 +98,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/viewletter"
                     android:gravity="center"
+                    android:textColor="#000000"
                     android:textSize="40sp"
                     android:textStyle="bold" />
 
@@ -83,6 +114,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/viewletter"
                     android:gravity="center"
+                    android:textColor="#000000"
                     android:textSize="40sp"
                     android:textStyle="bold" />
 
@@ -98,6 +130,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/viewletter"
                     android:gravity="center"
+                    android:textColor="#000000"
                     android:textSize="40sp"
                     android:textStyle="bold" />
 
@@ -113,6 +146,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/viewletter"
                     android:gravity="center"
+                    android:textColor="#000000"
                     android:textSize="40sp"
                     android:textStyle="bold" />
 
@@ -144,6 +178,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/viewletter"
                     android:gravity="center"
+                    android:textColor="#000000"
                     android:textSize="40sp"
                     android:textStyle="bold" />
 
@@ -159,6 +194,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/viewletter"
                     android:gravity="center"
+                    android:textColor="#000000"
                     android:textSize="40sp"
                     android:textStyle="bold" />
 
@@ -174,13 +210,15 @@
                     android:layout_weight="1"
                     android:background="@drawable/viewletter"
                     android:gravity="center"
+                    android:textColor="#000000"
                     android:textSize="40sp"
                     android:textStyle="bold" />
 
                 <Space
                     android:layout_width="10dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:textColor="#000000" />
 
                 <TextView
                     android:id="@+id/text44"
@@ -189,6 +227,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/viewletter"
                     android:gravity="center"
+                    android:textColor="#000000"
                     android:textSize="40sp"
                     android:textStyle="bold" />
 
@@ -204,6 +243,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/viewletter"
                     android:gravity="center"
+                    android:textColor="#000000"
                     android:textSize="40sp"
                     android:textStyle="bold" />
 
@@ -235,6 +275,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/viewletter"
                     android:gravity="center"
+                    android:textColor="#000000"
                     android:textSize="40sp"
                     android:textStyle="bold" />
 
@@ -250,6 +291,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/viewletter"
                     android:gravity="center"
+                    android:textColor="#000000"
                     android:textSize="40sp"
                     android:textStyle="bold" />
 
@@ -265,6 +307,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/viewletter"
                     android:gravity="center"
+                    android:textColor="#000000"
                     android:textSize="40sp"
                     android:textStyle="bold" />
 
@@ -280,6 +323,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/viewletter"
                     android:gravity="center"
+                    android:textColor="#000000"
                     android:textSize="40sp"
                     android:textStyle="bold" />
 
@@ -295,6 +339,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/viewletter"
                     android:gravity="center"
+                    android:textColor="#000000"
                     android:textSize="40sp"
                     android:textStyle="bold" />
 
@@ -326,6 +371,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/viewletter"
                     android:gravity="center"
+                    android:textColor="#000000"
                     android:textSize="40sp"
                     android:textStyle="bold" />
 
@@ -341,6 +387,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/viewletter"
                     android:gravity="center"
+                    android:textColor="#000000"
                     android:textSize="40sp"
                     android:textStyle="bold" />
 
@@ -356,6 +403,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/viewletter"
                     android:gravity="center"
+                    android:textColor="#000000"
                     android:textSize="40sp"
                     android:textStyle="bold" />
 
@@ -371,6 +419,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/viewletter"
                     android:gravity="center"
+                    android:textColor="#000000"
                     android:textSize="40sp"
                     android:textStyle="bold" />
 
@@ -386,6 +435,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/viewletter"
                     android:gravity="center"
+                    android:textColor="#000000"
                     android:textSize="40sp"
                     android:textStyle="bold" />
 
@@ -417,6 +467,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/viewletter"
                     android:gravity="center"
+                    android:textColor="#000000"
                     android:textSize="40sp"
                     android:textStyle="bold" />
 
@@ -432,6 +483,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/viewletter"
                     android:gravity="center"
+                    android:textColor="#000000"
                     android:textSize="40sp"
                     android:textStyle="bold" />
 
@@ -447,6 +499,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/viewletter"
                     android:gravity="center"
+                    android:textColor="#000000"
                     android:textSize="40sp"
                     android:textStyle="bold" />
 
@@ -462,6 +515,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/viewletter"
                     android:gravity="center"
+                    android:textColor="#000000"
                     android:textSize="40sp"
                     android:textStyle="bold" />
 
@@ -477,6 +531,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/viewletter"
                     android:gravity="center"
+                    android:textColor="#000000"
                     android:textSize="40sp"
                     android:textStyle="bold" />
 
@@ -508,6 +563,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/viewletter"
                     android:gravity="center"
+                    android:textColor="#000000"
                     android:textSize="40sp"
                     android:textStyle="bold" />
 
@@ -523,6 +579,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/viewletter"
                     android:gravity="center"
+                    android:textColor="#000000"
                     android:textSize="40sp"
                     android:textStyle="bold" />
 
@@ -538,13 +595,16 @@
                     android:layout_weight="1"
                     android:background="@drawable/viewletter"
                     android:gravity="center"
+                    android:textColor="#000000"
                     android:textSize="40sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="TooManyViews" />
 
                 <Space
                     android:layout_width="10dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    tools:ignore="TooManyViews" />
 
                 <TextView
                     android:id="@+id/text444444"
@@ -553,8 +613,10 @@
                     android:layout_weight="1"
                     android:background="@drawable/viewletter"
                     android:gravity="center"
+                    android:textColor="#000000"
                     android:textSize="40sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="TooManyViews" />
 
                 <Space
                     android:layout_width="10dp"
@@ -569,6 +631,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/viewletter"
                     android:gravity="center"
+                    android:textColor="#000000"
                     android:textSize="40sp"
                     android:textStyle="bold" />
 
@@ -603,10 +666,11 @@
                     android:layout_width="48dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#B3B6B7"
+                    android:background="#ffffff"
                     android:gravity="center"
                     android:onClick="clickLetter"
                     android:text="@string/q"
+                    android:textColor="#000000"
                     android:textSize="18sp"
                     android:textStyle="bold"
 
@@ -622,10 +686,11 @@
                     android:layout_width="48dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#B3B6B7"
+                    android:background="#ffffff"
                     android:gravity="center"
                     android:onClick="clickLetter"
                     android:text="@string/w"
+                    android:textColor="#000000"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     tools:ignore="TouchTargetSizeCheck" />
@@ -640,10 +705,11 @@
                     android:layout_width="48dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#B3B6B7"
+                    android:background="#ffffff"
                     android:gravity="center"
                     android:onClick="clickLetter"
                     android:text="@string/e"
+                    android:textColor="#000000"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     tools:ignore="TouchTargetSizeCheck" />
@@ -658,10 +724,11 @@
                     android:layout_width="48dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#B3B6B7"
+                    android:background="#ffffff"
                     android:gravity="center"
                     android:onClick="clickLetter"
                     android:text="@string/r"
+                    android:textColor="#000000"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     tools:ignore="TouchTargetSizeCheck" />
@@ -676,10 +743,11 @@
                     android:layout_width="48dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#B3B6B7"
+                    android:background="#ffffff"
                     android:gravity="center"
                     android:onClick="clickLetter"
                     android:text="@string/t"
+                    android:textColor="#000000"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     tools:ignore="TouchTargetSizeCheck" />
@@ -694,10 +762,12 @@
                     android:layout_width="48dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#B3B6B7"
+
+                    android:background="#ffffff"
                     android:gravity="center"
                     android:onClick="clickLetter"
                     android:text="@string/y"
+                    android:textColor="#000000"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
@@ -712,10 +782,11 @@
                     android:layout_width="48dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#B3B6B7"
+                    android:background="#ffffff"
                     android:gravity="center"
                     android:onClick="clickLetter"
                     android:text="@string/u"
+                    android:textColor="#000000"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     tools:ignore="TouchTargetSizeCheck" />
@@ -730,10 +801,11 @@
                     android:layout_width="48dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#B3B6B7"
+                    android:background="#ffffff"
                     android:gravity="center"
                     android:onClick="clickLetter"
                     android:text="@string/i"
+                    android:textColor="#000000"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     tools:ignore="TouchTargetSizeCheck" />
@@ -748,10 +820,11 @@
                     android:layout_width="48dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#B3B6B7"
+                    android:background="#ffffff"
                     android:gravity="center"
                     android:onClick="clickLetter"
                     android:text="@string/o"
+                    android:textColor="#000000"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     tools:ignore="TouchTargetSizeCheck" />
@@ -766,10 +839,11 @@
                     android:layout_width="48dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#B3B6B7"
+                    android:background="#ffffff"
                     android:gravity="center"
                     android:onClick="clickLetter"
                     android:text="@string/p"
+                    android:textColor="#000000"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     tools:ignore="TouchTargetSizeCheck" />
@@ -801,11 +875,12 @@
                     android:layout_width="48dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#B3B6B7"
-
+                    android:background="#ffffff"
                     android:gravity="center"
+
                     android:onClick="clickLetter"
                     android:text="@string/a"
+                    android:textColor="#000000"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     tools:ignore="TouchTargetSizeCheck" />
@@ -817,16 +892,17 @@
 
                 <TextView
                     android:id="@+id/S"
-                    tools:ignore="TouchTargetSizeCheck"
-                    android:onClick="clickLetter"
                     android:layout_width="48dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#B3B6B7"
+                    android:background="#ffffff"
                     android:gravity="center"
+                    android:onClick="clickLetter"
                     android:text="@string/s"
+                    android:textColor="#000000"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="TouchTargetSizeCheck" />
 
                 <Space
                     android:layout_width="15sp"
@@ -835,16 +911,17 @@
 
                 <TextView
                     android:id="@+id/D"
-                    tools:ignore="TouchTargetSizeCheck"
-                    android:onClick="clickLetter"
                     android:layout_width="48dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#B3B6B7"
+                    android:background="#ffffff"
                     android:gravity="center"
+                    android:onClick="clickLetter"
                     android:text="@string/d"
+                    android:textColor="#000000"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="TouchTargetSizeCheck" />
 
                 <Space
                     android:layout_width="15sp"
@@ -853,16 +930,17 @@
 
                 <TextView
                     android:id="@+id/F"
-                    tools:ignore="TouchTargetSizeCheck"
-                    android:onClick="clickLetter"
                     android:layout_width="48dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#B3B6B7"
+                    android:background="#ffffff"
                     android:gravity="center"
+                    android:onClick="clickLetter"
                     android:text="@string/f"
+                    android:textColor="#000000"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="TouchTargetSizeCheck" />
 
                 <Space
                     android:layout_width="15sp"
@@ -871,16 +949,17 @@
 
                 <TextView
                     android:id="@+id/G"
-                    tools:ignore="TouchTargetSizeCheck"
-                    android:onClick="clickLetter"
                     android:layout_width="48dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#B3B6B7"
+                    android:background="#ffffff"
                     android:gravity="center"
+                    android:onClick="clickLetter"
                     android:text="@string/g"
+                    android:textColor="#000000"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="TouchTargetSizeCheck" />
 
                 <Space
                     android:layout_width="15sp"
@@ -889,16 +968,17 @@
 
                 <TextView
                     android:id="@+id/H"
-                    tools:ignore="TouchTargetSizeCheck"
-                    android:onClick="clickLetter"
                     android:layout_width="48dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#B3B6B7"
+                    android:background="#ffffff"
                     android:gravity="center"
+                    android:onClick="clickLetter"
                     android:text="@string/h"
+                    android:textColor="#000000"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="TouchTargetSizeCheck" />
 
                 <Space
                     android:layout_width="15sp"
@@ -907,16 +987,17 @@
 
                 <TextView
                     android:id="@+id/J"
-                    tools:ignore="TouchTargetSizeCheck"
                     android:layout_width="48dp"
-                    android:onClick="clickLetter"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#B3B6B7"
+                    android:background="#ffffff"
                     android:gravity="center"
+                    android:onClick="clickLetter"
                     android:text="@string/j"
+                    android:textColor="#000000"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="TouchTargetSizeCheck" />
 
                 <Space
                     android:layout_width="15sp"
@@ -925,16 +1006,17 @@
 
                 <TextView
                     android:id="@+id/K"
-                    tools:ignore="TouchTargetSizeCheck"
-                    android:onClick="clickLetter"
                     android:layout_width="48dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#B3B6B7"
+                    android:background="#ffffff"
                     android:gravity="center"
+                    android:onClick="clickLetter"
                     android:text="@string/k"
+                    android:textColor="#000000"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="TouchTargetSizeCheck" />
 
                 <Space
                     android:layout_width="15sp"
@@ -943,16 +1025,17 @@
 
                 <TextView
                     android:id="@+id/L"
-                    tools:ignore="TouchTargetSizeCheck"
-                    android:onClick="clickLetter"
                     android:layout_width="48dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#B3B6B7"
+                    android:background="#ffffff"
                     android:gravity="center"
+                    android:onClick="clickLetter"
                     android:text="@string/l"
+                    android:textColor="#000000"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="TouchTargetSizeCheck" />
 
                 <Space
                     android:layout_width="33dp"
@@ -976,13 +1059,14 @@
 
                 <TextView
                     android:id="@+id/Enter"
-                    android:onClick="clickLetter"
                     android:layout_width="68dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#B3B6B7"
+                    android:background="#ffffff"
                     android:gravity="center"
+                    android:onClick="clickLetter"
                     android:text="@string/enter"
+                    android:textColor="#000000"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     tools:ignore="TouchTargetSizeCheck,TextSizeCheck" />
@@ -995,15 +1079,16 @@
                 <TextView
                     android:id="@+id/Z"
                     android:layout_width="48dp"
-                    tools:ignore="TouchTargetSizeCheck"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#B3B6B7"
+                    android:background="#ffffff"
                     android:gravity="center"
                     android:onClick="clickLetter"
                     android:text="@string/z"
+                    android:textColor="#000000"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="TouchTargetSizeCheck" />
 
                 <Space
                     android:layout_width="15sp"
@@ -1012,16 +1097,17 @@
 
                 <TextView
                     android:id="@+id/X"
-                    tools:ignore="TouchTargetSizeCheck"
-                    android:onClick="clickLetter"
                     android:layout_width="48dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#B3B6B7"
+                    android:background="#ffffff"
                     android:gravity="center"
+                    android:onClick="clickLetter"
                     android:text="@string/x"
+                    android:textColor="#000000"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="TouchTargetSizeCheck" />
 
                 <Space
                     android:layout_width="15sp"
@@ -1030,16 +1116,17 @@
 
                 <TextView
                     android:id="@+id/C"
-                    tools:ignore="TouchTargetSizeCheck"
-                    android:onClick="clickLetter"
                     android:layout_width="48dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#B3B6B7"
+                    android:background="#ffffff"
                     android:gravity="center"
+                    android:onClick="clickLetter"
                     android:text="@string/c"
+                    android:textColor="#000000"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="TouchTargetSizeCheck" />
 
                 <Space
                     android:layout_width="15sp"
@@ -1048,16 +1135,17 @@
 
                 <TextView
                     android:id="@+id/V"
-                    tools:ignore="TouchTargetSizeCheck"
-                    android:onClick="clickLetter"
                     android:layout_width="48dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#B3B6B7"
+                    android:background="#ffffff"
                     android:gravity="center"
+                    android:onClick="clickLetter"
                     android:text="@string/v"
+                    android:textColor="#000000"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="TouchTargetSizeCheck" />
 
                 <Space
                     android:layout_width="15sp"
@@ -1066,16 +1154,17 @@
 
                 <TextView
                     android:id="@+id/B"
-                    tools:ignore="TouchTargetSizeCheck"
-                    android:onClick="clickLetter"
                     android:layout_width="48dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#B3B6B7"
+                    android:background="#ffffff"
                     android:gravity="center"
+                    android:onClick="clickLetter"
                     android:text="@string/b"
+                    android:textColor="#000000"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="TouchTargetSizeCheck" />
 
                 <Space
                     android:layout_width="15sp"
@@ -1084,16 +1173,17 @@
 
                 <TextView
                     android:id="@+id/N"
-                    tools:ignore="TouchTargetSizeCheck"
-                    android:onClick="clickLetter"
                     android:layout_width="48dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#B3B6B7"
+                    android:background="#ffffff"
                     android:gravity="center"
+                    android:onClick="clickLetter"
                     android:text="@string/n"
+                    android:textColor="#000000"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="TouchTargetSizeCheck" />
 
                 <Space
                     android:layout_width="15sp"
@@ -1102,16 +1192,17 @@
 
                 <TextView
                     android:id="@+id/M"
-                    tools:ignore="TouchTargetSizeCheck"
-                    android:onClick="clickLetter"
                     android:layout_width="48dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#B3B6B7"
+                    android:background="#ffffff"
                     android:gravity="center"
+                    android:onClick="clickLetter"
                     android:text="@string/m"
+                    android:textColor="#000000"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="TouchTargetSizeCheck" />
 
                 <Space
                     android:layout_width="15sp"
@@ -1123,10 +1214,11 @@
                     android:layout_width="68dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#B3B6B7"
+                    android:background="#ffffff"
                     android:gravity="center"
                     android:onClick="clickLetter"
                     android:text="@string/delete"
+                    android:textColor="#000000"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     tools:ignore="TextSizeCheck" />

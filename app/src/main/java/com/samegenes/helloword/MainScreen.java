@@ -12,17 +12,17 @@ public class MainScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
-
     }
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
     public void goGameScreen(View view){
-
         Intent gameScreen = new Intent(this, GameScreen.class);
         startActivity(gameScreen);
+        onDestroy();
     }
-
     public void goSettingScreen(View view){
-
         Intent settingScreen = new Intent(this, SettingScreen.class);
         startActivity(settingScreen);
     }

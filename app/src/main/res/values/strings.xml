@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">HelloWord!</string>
     <string name="todo">TODO</string>
     <string name="todo1">TODO</string>
     <string name="pic">TODO</string>
@@ -39,4 +39,25 @@
     <string name="music_background">music_background</string>
     <string name="you_wins">You Wins</string>
     <string name="restart">Restart?</string>
+    <string name="restart1">restart1</string>
+    <string name="you_win1">you_win1</string>
+    <string name="answer">answer</string>
+    <string name="settingg">settingg</string>
+    <string name="you_win">You win</string>
+    <string name="music_background1">Music_Background</string>
+    <string name="restart32">Restart</string>
+    <string name="setingg">TODO</string>
+    <string name="answer1">Answer</string>
+    <string name="click_me_for_answer">click me for answer</string>
+    <string name="playyy">TODO</string>
+    <string name="palyyy">TODO</string>
+    <string name="set">TODO</string>
+    <string name="playy">TODO</string>
+    <string name="settt">TODO</string>
+    <string name="ddddddddddddddddd">Button</string>
+    <string name="texx">Button</string>
+    <string name="aaa">A</string>
+    <string name="textview">TextView</string>
+    <string name="restardd">TODO</string>
+    <string name="resdss">TODO</string>
 </resources>

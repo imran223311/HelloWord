@@ -31,6 +31,7 @@
             android:text="@string/setting"
             android:textColor="#393939"
             android:textSize="40sp"
+            android:textStyle="bold"
             tools:ignore="TextSizeCheck" />
 
     </LinearLayout>
@@ -42,16 +43,18 @@
 
         <Switch
             android:id="@+id/switch1"
-            android:layout_width="332dp"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginEnd="50dp"
             android:layout_weight="1"
             android:enabled="true"
             android:gravity="center"
             android:onClick="onSwitchClick"
             android:saveEnabled="true"
-            android:text="@string/music_background"
+            android:text="@string/music_background1"
             android:textColor="#000000"
-            android:textSize="20sp"
+            android:textSize="24sp"
+            android:textStyle="bold"
             tools:ignore="TextSizeCheck,UseSwitchCompatOrMaterialXml" />
     </LinearLayout>
 
