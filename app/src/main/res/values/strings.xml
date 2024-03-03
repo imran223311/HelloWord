@@ -60,4 +60,16 @@
     <string name="textview">TextView</string>
     <string name="restardd">TODO</string>
     <string name="resdss">TODO</string>
+    <string name="youlost">Youlost</string>
+    <string name="you_have_to_guess_the_hidden_word_in_6_tries_n_and_the_color_of_the_letters_nchanges_to_show_how_close_you_are_n_to_start_the_game_just_enter_any_word_for_example">You have to guess the hidden word in 6 tries\n and the color of the letters\nchanges to show how close you are.\n To start the game, just enter any word, for example:</string>
+    <string name="how_to_play_n">How to play\n</string>
+    <string name="ddd">D\t</string>
+    <string name="rr">R</string>
+    <string name="ee">E</string>
+    <string name="eeaaaa">A</string>
+    <string name="mmm">M</string>
+    <string name="is_in_the_word_and_in_the_correct_spot">is in the word and in the correct spot.</string>
+    <string name="is_in_the_word_but_in_the_wrong_spot">is in the word but in the wrong spot.</string>
+    <string name="aren_t_in_the_target_word_at_all">aren\'t in the target word at all.</string>
+    <string name="qusetmark">TODO</string>
 </resources>

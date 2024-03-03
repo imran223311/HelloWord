@@ -1,13 +1,15 @@
 package com.samegenes.helloword;
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -17,11 +19,10 @@ import java.util.Random;
 import java.util.Set;
 
 public class GameScreen extends AppCompatActivity {
-    Dialog dialog;
-    String total = "";
+    private Dialog dialog;
+    private String total = "";
     private final int[] totals = new int[5];
     private int[] ordertext = new int[5];
-
     private final int[] ordertext1 = {R.id.text1, R.id.text2, R.id.text3, R.id.text4, R.id.text5};
     private final int[] ordertext2 = {R.id.text11, R.id.text22, R.id.text33, R.id.text44, R.id.text55};
     private final int[] ordertext3 = {R.id.text111, R.id.text222, R.id.text333, R.id.text444, R.id.text555};
@@ -29,37 +30,49 @@ public class GameScreen extends AppCompatActivity {
     private final int[] ordertext5 = {R.id.text11111, R.id.text22222, R.id.text33333, R.id.text44444, R.id.text55555};
     private final int[] ordertext6 = {R.id.text111111, R.id.text222222, R.id.text333333, R.id.text444444, R.id.text555555};
     private int count = 0, change = 0, checkpoint = 0;
-
-    in_game_word ans = new in_game_word();
+    private final InGameWord ans = new InGameWord();
     public String target = ans.getword();
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void onCreate(Bundle x) {
+        super.onCreate(x);
         setContentView(R.layout.activity_game_screen);
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
     }
+    @SuppressLint("SetTextI18n")
     public void giveups(View view) {
         dialog = new Dialog(this);
         Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.setContentView(R.layout.giveuppopup);
-        TextView text = (TextView) dialog.findViewById(R.id.textView5);
+        TextView text = (TextView) dialog.findViewById(R.id.show);
         text.setText(target);
         dialog.show();
+        TextView lost = findViewById(R.id.lostshow);
+        lost.setText("You Lost!");
+        change = 6;
     }
-
+    @SuppressLint("SetTextI18n")
     public void CreatedpopupEnd() {
-        dialog = new Dialog(this);
-        dialog.setContentView(R.layout.popupwin);
         if (checkpoint == 5) {
+            dialog = new Dialog(this);
+            dialog.setContentView(R.layout.popupwin);
             Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             dialog.show();
             change = 6;
+        }else if(change == 5 && checkpoint != 5){
+            dialog = new Dialog(this);
+            Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            dialog.setContentView(R.layout.giveuppopup);
+            TextView text = (TextView) dialog.findViewById(R.id.show);
+            text.setText(target);
+            dialog.show();
+            TextView lost = findViewById(R.id.lostshow);
+            lost.setText("You Lost!");
+            change = 6;
         }
     }
-
     public void check() {
-        //ใส่ if ตรงนี้
         for (int i = 0; i < 5; i++) {
             TextView vls = findViewById(ordertext[i]);
             TextView vl = findViewById(totals[i]);
@@ -77,10 +90,7 @@ public class GameScreen extends AppCompatActivity {
         }
         CreatedpopupEnd();
         checkpoint = 0;
-        //else ให้โชว์ ข้อความลอยว่าใส่ไม่ครบ
-
     }
-
     public void clickLetter(View v) { //ส่วนของแป้นพิมพ์ตรงนี้น่าจะครบละ
         if (change < 6) {
             if (change == 0) {
@@ -128,12 +138,17 @@ public class GameScreen extends AppCompatActivity {
                     }
                 } else if (y == R.id.Enter) {
                     if (total.length() < 5) {
-                    } else {
-                        check();
-                        change++;
-                        count = 0;
-                        total = "";
-
+                        Toast.makeText(GameScreen.this,"Complete The Word With 5 Letter",Toast.LENGTH_LONG).show();
+                    } else{
+                        ans.setWordforcheck(total);
+                        if(ans.CheckValid()) {
+                            check();
+                            change++;
+                            count = 0;
+                            total = "";
+                        }else{
+                            Toast.makeText(GameScreen.this,"Please Enter A Meaningful Word",Toast.LENGTH_LONG).show();
+                        }
                     }
                 } else {
                     if (count == 4) {
@@ -150,24 +165,17 @@ public class GameScreen extends AppCompatActivity {
             }
         }
     }
-
     public void goMain(View view) {
-        super.onDestroy();
         Intent main = new Intent(this, MainScreen.class);
         startActivity(main);
-        onDestroy();
-    }
-
-    public void goSettingScreen(View view) {
-        Intent settingScreen = new Intent(this, SettingScreen.class);
-        startActivity(settingScreen);
     }
 }
 
-class in_game_word {
-    private String word = "";
-    private final Set<String> Word_set = new HashSet<String>();
-    public in_game_word(){
+class InGameWord {
+    private int size,randIdx;
+    private String check ,word = "";
+    private final Set<String> Word_set = new HashSet<>();
+    public InGameWord(){
         Word_set.addAll(Arrays.asList(
                 "aback", "abase", "abate", "abbey", "abbot", "abhor", "abide", "abled", "abode", "abort", "about", "above", "abuse", "abyss", "acorn", "acrid", "actor", "acute", "adage", "adapt", "adept", "admin", "admit", "adobe", "adopt", "adore", "adorn", "adult", "affix", "afire", "afoot", "afoul", "after", "again", "agape", "agate", "agent", "agile", "aging", "aglow", "agony", "agree", "ahead", "aider", "aisle", "alarm", "album", "alert", "algae", "alibi", "alien", "align", "alike", "alive", "allay", "alley", "allot", "allow", "alloy", "aloft", "alone", "along", "aloof", "aloud", "alpha", "altar", "alter", "amass", "amaze", "amber", "amble", "amend", "amiss", "amity", "among", "ample", "amply", "amuse", "angel", "anger", "angle", "angry", "angst", "anime", "ankle", "annex", "annoy", "annul", "anode", "antic", "anvil", "aorta", "apart", "aphid", "aping", "apnea", "apple", "apply", "apron", "aptly", "arbor", "ardor", "arena", "argue", "arise", "armor", "aroma", "arose", "array", "arrow", "arson", "artsy", "ascot", "ashen", "aside", "askew", "assay", "asset", "atoll", "atone", "attic", "audio", "audit", "augur", "aunty", "avail", "avert", "avian", "avoid", "await", "awake", "award", "aware", "awash", "awful", "awoke", "axial", "axiom", "axion", "azure",
                 "zebra", "zesty", "zonal",
@@ -194,21 +202,21 @@ class in_game_word {
                 "eager","eagle","early","earth","easel","eaten","eater","ebony","eclat","edict","edify","eerie","egret","eight","eject","eking","elate","elbow","elder","elect","elegy","elfin","elide","elite","elope","elude","email","embed","ember","emcee","empty","enact","endow","enema","enemy","enjoy","ennui","ensue","enter","entry","envoy","epoch","epoxy","equal","equip","erase","erect","erode","error","erupt","essay","ester","ether","ethic","ethos","etude","evade","event","every","evict","evoke","exact","exalt","excel","exert","exile","exist","expel","extol","extra","exult","eying",
                 "daddy","daily","dairy","daisy","dally","dance","dandy","datum","daunt","dealt","death","debar","debit","debug","debut","decal","decay","decor","decoy","decry","defer","deign","deity","delay","delta","delve","demon","demur","denim","dense","depot","depth","derby","deter","detox","deuce","diary","dicey","digit","dilly","dimly","diner","dingo","dingy","diode","dirge","dirty","disco","ditch","ditto","ditty","diver","dizzy","dodge","dodgy","dogma","doing","dolly","donor","donut","dopey","doubt","dough","dowdy","dowel","downy","dowry","dozen","draft","drain","drake","drama","drank","drape","drawl","drawn","dread","dream","dress","dried","drier","drift","drill","drink","drive","droit","droll","drone","drool","droop","dross","drove","drown","druid","drunk","dryer","dryly","duchy","dully","dummy","dumpy","dunce","dusky","dusty","dutch","duvet","dwarf","dwell","dwelt","dying",
                 "cabal","cabby","cabin","cable","cacao","cache","cacti","caddy","cadet","cagey","cairn","camel","cameo","canal","candy","canny","canoe","canon","caper","caput","carat","cargo","carol","carry","carve","caste","catch","cater","catty","caulk","cause","cavil","cease","cedar","cello","chafe","chaff","chain","chair","chalk","champ","chant","chaos","chard","charm","chart","chase","chasm","cheap","cheat","check","cheek","cheer","chess","chest","chick","chide","chief","child","chili","chill","chime","china","chirp","chock","choir","choke","chord","chore","chose","chuck","chump","chunk","churn","chute","cider","cigar","cinch","circa","civic","civil","clack","claim","clamp","clang","clank","clash","clasp","class","clean","clear","cleat","cleft","clerk","click","cliff","climb","cling","clink","cloak","clock","clone","close","cloth","cloud","clout","clove","clown","cluck","clued","clump","clung","coach","coast","cobra","cocoa","colon","color","comet","comfy","comic","comma","conch","condo","conic","copse","coral","corer","corny","couch","cough","could","count","coupe","court","coven","cover","covet","covey","cower","coyly","crack","craft","cramp","crane","crank","crash","crass","crate","crave","crawl","craze","crazy","creak","cream","credo","creed","creek","creep","creme","crepe","crept","cress","crest","crick","cried","crier","crime","crimp","crisp","croak","crock","crone","crony","crook","cross","croup","crowd","crown","crude","cruel","crumb","crump","crush","crust","crypt","cubic","cumin","curio","curly","curry","curse","curve","curvy","cutie","cyber","cycle","cynic",
-                "bacon","badge","badly","bagel","baggy","baker","baler","balmy","banal","banjo","barge","baron","basal","basic","basil","basin","basis","baste","batch","bathe","baton","batty","bawdy","bayou","beach","beady","beard","beast","beech","beefy","befit","began","begat","beget","begin","begun","being","belch","belie","belle","belly","below","bench","beret","berry","berth","beset","betel","bevel","bezel","bible","bicep","biddy","bigot","bilge","billy","binge","bingo","biome","birch","birth","bison","bitty","black","blade","blame","bland","blank","blare","blast","blaze","bleak","bleat","bleed","bleep","blend","bless","blimp","blind","blink","bliss","blitz","bloat","block","bloke","blond","blood","bloom","blown","bluer","bluff","blunt","blurb","blurt","blush","board","boast","bobby","boney","bongo","bonus","booby","boost","booth","booty","booze","boozy","borax","borne","bosom","bossy","botch","bough","boule","bound","bowel","boxer","brace","braid","brain","brake","brand","brash","brass","brave","bravo","brawl","brawn","bread","break","breed","briar","bribe","brick","bride","brief","brine","bring","brink","briny","brisk","broad","broil","broke","brood","brook","broom","broth","brown","brunt","brush","brute","buddy","budge","buggy","bugle","build","built","bulge","bulky","bully","bunch","bunny","burly","burnt","burst","bused","bushy","butch","butte","buxom","buyer","bylaw"));
+                "bacon","badge","badly","bagel","baggy","baker","baler","balmy","banal","banjo","barge","baron","basal","basic","basil","basin","basis","baste","batch","bathe","baton","batty","bawdy","bayou","beach","beady","beard","beast","beech","beefy","befit","began","begat","beget","begin","begun","being","belch","belie","belle","belly","below","bench","beret","berry","berth","beset","betel","bevel","bezel","bible","bicep","biddy","bigot","bilge","billy","binge","bingo","biome","birch","birth","bison","bitty","black","blade","blame","bland","blank","blare","blast","blaze","bleak","bleat","bleed","bleep","blend","bless","blimp","blind","blink","bliss","blitz","bloat","block","bloke","blond","blood","bloom","blown","bluer","bluff","blunt","blurb","blurt","blush","board","boast","bobby","boney","bongo","bonus","booby","boost","booth","booty","booze","boozy","borax","borne","bosom","bossy","botch","bough","boule","bound","bowel","boxer","brace","braid","brain","brake","brand","brash","brass","brave","bravo","brawl","brawn","bread","break","breed","briar","bribe","brick","bride","brief","brine","bring","brink","briny","brisk","broad","broil","broke","brood","brook","broom","broth","brown","brunt","brush","brute","buddy","budge","buggy","bugle","build","built","bulge","bulky","bully","bunch","bunny","burly","burnt","burst","bused","bushy","butch","butte","buxom","buyer","bylaw","waste","climb"));
         List<String> list = new ArrayList<>(Word_set);
-
-        int size = list.size();
-        int randIdx = new Random().nextInt(size);
+        size = list.size();
+        randIdx = new Random().nextInt(size);
 
         String randomElem = list.get(randIdx);
         word = randomElem.toUpperCase();
 
     }
-
     public String getword(){
         return word;}
-
-    public boolean CheckValid(String check){
+    public void setWordforcheck(String x){
+        check = x;
+    }
+    public boolean CheckValid(){
         return Word_set.contains(check.toLowerCase());
     }
 }

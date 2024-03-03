@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="380dp"
+    android:layout_height="600dp"
+    android:layout_gravity="center"
+    android:background="@drawable/bbbbbbb"
+    tools:context=".MainScreen"
+    tools:ignore="TextSizeCheck">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:text="@string/how_to_play_n"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center"
+        android:text="@string/you_have_to_guess_the_hidden_word_in_6_tries_n_and_the_color_of_the_letters_nchanges_to_show_how_close_you_are_n_to_start_the_game_just_enter_any_word_for_example"
+        android:textColor="#ffffff"
+        tools:ignore="TextContrastCheck" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="240dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00FF00"
+            android:gravity="center"
+            android:text="@string/ddd"
+            android:textColor="#000000"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FFFF00"
+            android:gravity="center"
+            android:text="@string/rr"
+            android:textColor="#000000"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FFFF00"
+            android:gravity="center"
+            android:text="@string/ee"
+            android:textColor="#000000"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#B3B6B7"
+            android:gravity="center"
+            android:text="@string/eeaaaa"
+            android:textColor="#000000"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#B3B6B7"
+            android:gravity="center"
+            android:text="@string/mmm"
+            android:textColor="#000000"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            tools:ignore="TextContrastCheck" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="390dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FFFF00"
+            android:gravity="center"
+            android:text="@string/rr"
+            android:textColor="#000000"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            tools:ignore="DuplicateIds,TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FFFF00"
+            android:gravity="center"
+            android:text="@string/ee"
+            android:textColor="#000000"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            tools:ignore="DuplicateIds,TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="239dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/is_in_the_word_but_in_the_wrong_spot"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            tools:ignore="DuplicateIds,TextSizeCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="330dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00FF00"
+            android:gravity="center"
+            android:text="@string/ddd"
+            android:textColor="#000000"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            tools:ignore="DuplicateIds,TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="239dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/is_in_the_word_and_in_the_correct_spot"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            tools:ignore="DuplicateIds,TextSizeCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="450dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#B3B6B7"
+            android:gravity="center"
+            android:text="@string/eeaaaa"
+            android:textColor="#000000"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            tools:ignore="DuplicateIds,TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#B3B6B7"
+            android:gravity="center"
+            android:text="@string/mmm"
+            android:textColor="#000000"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            tools:ignore="DuplicateIds,TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="239dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/aren_t_in_the_target_word_at_all"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            tools:ignore="DuplicateIds,TextSizeCheck" />
+    </LinearLayout>
+
+</RelativeLayout>
