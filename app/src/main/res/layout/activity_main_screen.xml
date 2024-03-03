@@ -24,14 +24,5 @@
             android:contentDescription="@string/playy"
             tools:ignore="DuplicateSpeakableTextCheck" />
 
-        <ImageButton
-            android:id="@+id/setbut"
-            android:layout_width="231dp"
-            android:layout_height="100dp"
-            android:layout_marginStart="4dp"
-            android:layout_gravity="center"
-            android:onClick="goSettingScreen"
-            android:background="@drawable/setting"
-            android:contentDescription="@string/settt" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
