@@ -1,5 +1,7 @@
 package com.samegenes.helloword;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -14,6 +16,7 @@ public class MainScreen extends AppCompatActivity {
         super.onCreate(x);
         setContentView(R.layout.activity_main_screen);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
     }
     public void helps(View view){
         Dialog dialog = new Dialog(this);
@@ -26,3 +29,4 @@ public class MainScreen extends AppCompatActivity {
         startActivity(gameScreen);
     }
 }
+

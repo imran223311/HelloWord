@@ -72,4 +72,5 @@
     <string name="is_in_the_word_but_in_the_wrong_spot">is in the word but in the wrong spot.</string>
     <string name="aren_t_in_the_target_word_at_all">aren\'t in the target word at all.</string>
     <string name="qusetmark">TODO</string>
+    <string name="themeName">defalut</string>
 </resources>
