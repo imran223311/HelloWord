@@ -45,11 +45,12 @@ public class GameScreen extends AppCompatActivity {
     private final InGameWord ans = new InGameWord(helloword.getAppContext());
     private String target = ans.getword();
 
+    @SuppressLint("SourceLockedOrientationActivity")
     @Override
     protected void onCreate(Bundle x) {
         super.onCreate(x);
         setContentView(R.layout.activity_game_screen);
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
     @SuppressLint("SetTextI18n")
     public void giveups(View view) {
@@ -119,22 +120,40 @@ public class GameScreen extends AppCompatActivity {
             }
             TextView vl = findViewById(ordertext[count]);
             int y = v.getId();
-            if ((y == R.id.Delete) && (count == 4)) {
-                if (vl.getText().equals("")) {
-                    TextView vlx = findViewById(ordertext[count - 1]);
-                    vlx.setText("");
-                    count--;
-                } else {
-                    vl.setText("");
+            if(count == 4 && !vl.getText().toString().equals("")){
+                if (y == R.id.Enter) {
+                    if (total.length() < 5) {
+                        Toast.makeText(GameScreen.this, "Complete The Word With 5 Letter", Toast.LENGTH_LONG).show();
+                    } else {
+                        ans.setWordforcheck(total);
+                        if (ans.CheckValid()) {
+                            check();
+                            change++;
+                            count = 0;
+                            total = "";
+                        } else {
+                            Toast.makeText(GameScreen.this, "Please Enter A Meaningful Word", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                }else if (y == R.id.Delete) {
+                    if (count == 0) {
+                        vl.setText("");
+
+                    } else if (vl.getText().equals("")) {
+                        TextView vlx = findViewById(ordertext[count - 1]);
+                        vlx.setText("");
+                        count--;
+                        total = total.substring(0, total.length() - 1);
+                    } else {
+                        vl.setText("");
+                        total = total.substring(0, total.length() - 1);
+                    }
                 }
-                total = total.substring(0, total.length() - 1);
             } else if (count < 0) {
                 count = 0;
             } else if (count < 5) {
                 TextView x = findViewById(y);
                 if (y == R.id.Delete) {
-                    TextView ch = findViewById(y);
-                    ch.setBackgroundColor(android.graphics.Color.parseColor("#D0D3D4"));
                     if (count == 0) {
                         vl.setText("");
 
@@ -204,9 +223,22 @@ class InGameWord {
                     buffer.close();
                 } catch (IOException e) {
                     throw new RuntimeException(e);}
+            }}
+
+        Set<String> Gen_set = new HashSet<>();
+
+        try {
+            buffer = new BufferedReader(new InputStreamReader(am.open("genword.txt")));
+            String mLine;
+            while ((mLine = buffer.readLine()) != null){
+                Gen_set.add(mLine);
             }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
-        List<String> list = new ArrayList<>(Word_set);
+
+
+        List<String> list = new ArrayList<>(Gen_set);
         size = list.size();
         randIdx = new Random().nextInt(size);
 
