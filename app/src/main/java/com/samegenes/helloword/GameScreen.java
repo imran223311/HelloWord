@@ -134,7 +134,6 @@ public class GameScreen extends AppCompatActivity {
                 TextView x = findViewById(y);
                 if (y == R.id.Delete) {
                     TextView ch = findViewById(y);
-                    ch.setBackgroundColor(android.graphics.Color.parseColor("#D0D3D4"));
                     if (count == 0) {
                         vl.setText("");
 
